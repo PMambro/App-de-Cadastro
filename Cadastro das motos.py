@@ -57,7 +57,7 @@ combobox_marcas.grid(row=0, column=1, padx=10, pady=10)
 
 
 
-
+print("olá")
 
 
 
