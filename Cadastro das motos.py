@@ -57,7 +57,7 @@ label_placa.grid(row=4, column=0, padx=10, pady=10)
 combobox_marcas = ttk.Combobox(values=marcas_modelos)
 combobox_marcas.grid(row=0, column=1, padx=10, pady=10)
 
-teste_option = ttk.OptionMenu(janela, option_var, *marcas_modelos)
+teste_option = ttk.OptionMenu(janela, option_var, 'modelos', *marcas_modelos, direction='right')
 teste_option.grid(row=1, column=1, sticky=W, padx=10, pady=10)
 
 
