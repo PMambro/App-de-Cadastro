@@ -66,7 +66,7 @@ teste_option.grid(row=1, column=1, sticky=W, padx=10, pady=10)
 
 
 
-
+{'Honda': [1, 12, 3], 'Yamaha': '1'}
 
 
 
