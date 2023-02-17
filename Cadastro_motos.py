@@ -31,8 +31,8 @@ janela.wm_attributes("-topmost",1) # in front of all the window
 # janela.resizable(0,0)
 screen_width = janela.winfo_screenwidth()
 screen_height = janela.winfo_screenheight()
-screen_x = 1200
-screen_y = 800
+screen_x = 800
+screen_y = 600
 x = int((screen_width / 2) - (screen_x / 2))
 y = int((screen_height / 2) - (screen_y / 2))
 janela.geometry(f"{screen_x}x{screen_y}+{x}+{y}")
@@ -85,19 +85,19 @@ label_marca.place(relx=0.07,rely=0.2, relwidth=0.15, relheight=0.1)
 
 label_modelo = Label(canvas, text='Modelo')
 # label_modelo.grid(row=1, column=0, padx=10, pady=10)
-label_modelo.place(relx=0.07,rely=0.3, relwidth=0.15, relheight=0.1)
+label_modelo.place(relx=0.07,rely=0.35, relwidth=0.15, relheight=0.1)
 
 label_ano = Label(canvas, text='Ano')
 # label_ano.grid(row=2, column=0, padx=10, pady=10)
-label_ano.place(relx=0.07,rely=0.4, relwidth=0.15, relheight=0.1)
+label_ano.place(relx=0.07,rely=0.5, relwidth=0.15, relheight=0.1)
 
 label_km = Label(canvas, text='KM Rodados')
 # label_km.grid(row=3, column=0, padx=10, pady=10)
-label_km.place(relx=0.07,rely=0.5, relwidth=0.15, relheight=0.1)
+label_km.place(relx=0.07,rely=0.65, relwidth=0.15, relheight=0.1)
 
 label_placa = Label(canvas, text='Placa')
 # label_placa.grid(row=4, column=0, padx=10, pady=10)
-label_placa.place(relx=0.07,rely=0.6, relwidth=0.15, relheight=0.1)
+label_placa.place(relx=0.07,rely=0.8, relwidth=0.15, relheight=0.1)
 
 # Entradas de dados
 
@@ -107,7 +107,7 @@ def option_changed(event):
     modelos = dictionary[marca_var.get()]
     combobox_modelo = ttk.OptionMenu(janela, modelo_var, 'Escolha um modelo', *dictionary[marca_var.get()], style='sty.TMenubutton')
     # combobox_modelo.grid(row=1, column=1, sticky=W, padx=50, pady=10)
-    combobox_modelo.place(relx=0.2,rely=0.3, relwidth=0.2, relheight=0.1)
+    combobox_modelo.place(relx=0.2,rely=0.35, relwidth=0.2, relheight=0.1)
 
 combobox_marcas = ttk.OptionMenu(canvas, marca_var, 'Escolha uma marca', *marcas, command=option_changed, style='sty.TMenubutton')
 # combobox_marcas.grid(row=0, column=1, sticky=W, padx=50, pady=10)
