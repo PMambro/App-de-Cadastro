@@ -39,7 +39,7 @@ janela.geometry(f"{screen_x}x{screen_y}+{x}+{y}")
 
 # Canvas
 
-canvas = Canvas(janela,width=screen_width,height=screen_height, bd=0 , highlightbackground='white')
+canvas = Canvas(janela,width=screen_width,height=screen_height, bd=0 , highlightbackground='white', highlightthickness=10)
 canvas.pack()
 
 # Configurando tamanho do texto
