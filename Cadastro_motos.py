@@ -58,7 +58,7 @@ def resize_font(event):
     # Menu de seleção
 
     style = ttk.Style()
-    style.configure('sty.TMenubutton', font=('Arial',size), background='white')
+    style.configure('sty.TMenubutton', font=('Arial',size), background='#2C3E50', foreground='white')
 
 canvas.bind("<Configure>", resize_font)
 
