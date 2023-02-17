@@ -69,11 +69,19 @@ dictionary = {'Honda': ['CG 160 Start', 'CG 160 Fan', 'CG 160 Titan', 'CG 160 Ca
 modelos_honda = ['CG 160 Start', 'CG 160 Fan', 'CG 160 Titan', 'CG 160 Cargo']
 modelos_yamaha = ['Fazer 250', 'TT-R 230', 'Fazer 150']
 
+def anos():
+    lista = []
+    for ano in range(2000, 2024):
+        lista.append(ano)
+    return lista
+
 marcas = ['Honda', 'Yamaha', 'Kawasaki', 'Suzuki']
 modelos = ['CG 160 Start', 'CG 160 Fan', 'CG 160 Titan', 'CG 160 Cargo','Fazer 250', 'TT-R 230', 'Fazer 150']
 
 marca_var = StringVar()
 modelo_var = StringVar()
+ano_var = StringVar()
+
 
 lista_ano = ['2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015']
 
@@ -83,19 +91,19 @@ label_marca = Label(canvas, text='Marca:')
 # label_marca.grid(row=0, column=0, padx=10, pady=10)
 label_marca.place(relx=0.07,rely=0.2, relwidth=0.15, relheight=0.1)
 
-label_modelo = Label(canvas, text='Modelo')
+label_modelo = Label(canvas, text='Modelo:')
 # label_modelo.grid(row=1, column=0, padx=10, pady=10)
 label_modelo.place(relx=0.07,rely=0.35, relwidth=0.15, relheight=0.1)
 
-label_ano = Label(canvas, text='Ano')
+label_ano = Label(canvas, text='Ano:')
 # label_ano.grid(row=2, column=0, padx=10, pady=10)
 label_ano.place(relx=0.07,rely=0.5, relwidth=0.15, relheight=0.1)
 
-label_km = Label(canvas, text='KM Rodados')
+label_km = Label(canvas, text='KM Rodados:')
 # label_km.grid(row=3, column=0, padx=10, pady=10)
 label_km.place(relx=0.07,rely=0.65, relwidth=0.15, relheight=0.1)
 
-label_placa = Label(canvas, text='Placa')
+label_placa = Label(canvas, text='Placa:')
 # label_placa.grid(row=4, column=0, padx=10, pady=10)
 label_placa.place(relx=0.07,rely=0.8, relwidth=0.15, relheight=0.1)
 
@@ -107,10 +115,13 @@ def option_changed(event):
     modelos = dictionary[marca_var.get()]
     combobox_modelo = ttk.OptionMenu(janela, modelo_var, 'Escolha um modelo', *dictionary[marca_var.get()], style='sty.TMenubutton')
     # combobox_modelo.grid(row=1, column=1, sticky=W, padx=50, pady=10)
-    combobox_modelo.place(relx=0.2,rely=0.35, relwidth=0.2, relheight=0.1)
+    combobox_modelo.place(relx=0.2,rely=0.35, relwidth=0.2, relheight=0.05)
 
 combobox_marcas = ttk.OptionMenu(canvas, marca_var, 'Escolha uma marca', *marcas, command=option_changed, style='sty.TMenubutton')
 # combobox_marcas.grid(row=0, column=1, sticky=W, padx=50, pady=10)
-combobox_marcas.place(relx=0.2,rely=0.2, relwidth=0.2, relheight=0.1)
+combobox_marcas.place(relx=0.2,rely=0.25, relwidth=0.2, relheight=0.05)
+
+combobox_anos = ttk.OptionMenu(canvas,ano_var, 'Escolha um ano', *anos(), style = 'sty.TMenubutton')
+combobox_anos.place(relx=0.2, rely=0.5, relwidth=0.2, relheight=0.05)
 
 janela.mainloop()
