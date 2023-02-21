@@ -10,7 +10,7 @@ class Menu:
     button_cadastro = 0
     button_exit = 0
 
-    def __init__(self,janela,canvas) :
+    def __init__(self,canvas) :
 
         def resize_font(event):
 
@@ -24,12 +24,12 @@ class Menu:
             self.button_cadastro.config(font=("Helvetica", size,'bold'))
 
         canvas.bind("<Configure>", resize_font)
-
+        
         self.titulo = Label(canvas, text="Cadastro de Motos")
-        self.titulo.place(relx=0.5,rely=0.1,relwidth=1,relheight=0.4, anchor="center")
+        self.titulo.place(relx=0.5,rely=0.1,relwidth=0.35,relheight=0.1, anchor="center")
     
         self.button_cadastro = Button(canvas , text="Cadastrar",fg="Black")
         self.button_cadastro.place(relx=0.5,rely=0.3,relwidth=0.2,relheight=0.1, anchor="center")
 
         self.button_exit = Button(canvas , text="Sair",fg="Black")
-        self.button_exit.place(relx=0.5,rely=0.9,relwidth=0.2,relheight=0.1, anchor="center")
+        self.button_exit.place(relx=0.5,rely=0.93, relwidth=0.2, relheight=0.05, anchor='center')

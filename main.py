@@ -3,6 +3,7 @@ from tkinter import ttk
 import sqlite3
 from Tela_Cadastro import Tela_Cadastro
 from Menu import Menu
+# from PIL import Image, ImageTk
 
 # Criar base de dados no sqlite3
 
@@ -41,6 +42,9 @@ y = int((screen_height / 2) - (screen_y / 2))
 janela.geometry(f"{screen_x}x{screen_y}+{x}+{y}")
 
 
+# img = Image.open("img\Corsair_.png")
+# photo_img = ImageTk.PhotoImage(img)
+
 def menu():
 
     # Função que cria a tela de menu em um canvas com base na classe Menu que contém todos objetos
@@ -50,8 +54,10 @@ def menu():
     canvas = Canvas(janela,width=janela.winfo_screenwidth(),height=janela.winfo_screenheight(), bd=0 , highlightbackground='white', highlightthickness=10)
     canvas.pack()
 
+    # canvas.create_image(0, 0, image=photo_img , anchor='nw')
+
     # Colocando todos objetos do menu na tela
-    menu = Menu(janela,canvas)
+    menu = Menu(canvas)
 
     # Configurando botões 
     menu.button_cadastro.bind("<Button-1>", to_cadastro)
@@ -66,8 +72,10 @@ def cadastro():
     canvas = Canvas(janela,width=janela.winfo_screenwidth(),height=janela.winfo_screenheight(), bd=0 , highlightbackground='white', highlightthickness=10)
     canvas.pack()
 
+    # canvas.create_image(0, 0, image=photo_img , anchor='nw')
+
     # Colocando todos objetos na tela de cadastro
-    cadastro = Tela_Cadastro(janela,canvas)
+    cadastro = Tela_Cadastro(canvas)
 
     # Configurando botões 
     cadastro.button_exit.bind("<Button-1>", to_menu)
